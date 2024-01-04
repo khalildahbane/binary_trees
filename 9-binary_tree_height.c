@@ -8,12 +8,23 @@
  */
 size_t binary_tree_height(const binary_tree_t *tree)
 {
-        if (!tree)
-        {
-            return (0);
-        }
-        size_t left = binary_tree_height(tree->left);
-        size_t right = binary_tree_height(tree->right);
+	size_t right = 0, left = 0;
 
+<<<<<<< HEAD
         return (left + 1  right + 1);
+=======
+	if (!tree)
+		return (0);
+
+	if (tree->right)
+		right = 1 + binary_tree_height(tree->right);
+
+	if (tree->left)
+		left = 1 + binary_tree_height(tree->left);
+
+	if (right > left)
+		return (right);
+	else
+		return (left);
+>>>>>>> refs/remotes/origin/master
 }
